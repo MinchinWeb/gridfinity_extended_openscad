@@ -116,6 +116,8 @@ function LookupKnownCellBattery(name="custom") =
 //[diameter, width, thickness, depthneeded, itemHeight, shape]
 function LookupKnownCard(name="custom") = 
   name == "filamentswatch" ? [0, 79.6, 2.6, 9, 31, "square"] :
+  name == "postit" ? [0, 76.7, 76.7, 1.0, 9.5, "square"] :
+  name == "postitsmall" ? [0, 50.9, 38.3, 1.0, 9.5, "square"] :
   name == "multicard" ? [0, 0, 0, 0, 0, "multicard"] :
   name == "compactflashi" ? [0, 43, 3.3, 9, 36, "square"] :
   name == "compactflashii" ? [0, 43, 5, 9, 36, "square"] :
