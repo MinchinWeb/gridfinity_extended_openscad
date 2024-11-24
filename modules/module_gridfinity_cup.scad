@@ -720,10 +720,8 @@ module gridfinity_cup(
           socket_padding = [0,0,4]);
 
         // add text to the bottom
-
-        _magnet_position = calculateMagnetPosition(cupBase_settings[iCupBase_MagnetSize][iCylinderDimension_Diameter]);
-        _text_x = wall_thickness + _magnet_position * 1/3;
-        _text_1_y = _magnet_position;
+        _text_x = 4.5 + 0.5;  // outer edge of magnet hole, per Gridfinity spec, plus adjustment factor
+        _text_1_y = 7.75 + cupBase_settings[iCupBase_MagnetSize][iCylinderDimension_Diameter] / 2 + 1.55 + 0.5;
         
         if (text_1) {
           _text_1_text = str(
@@ -753,6 +751,7 @@ module gridfinity_cup(
         }
 
         if (text_2) {
+          // TODO: don't bump this down if Text 1 isn't printed
           _text_2_y = _text_1_y + text_size * 1.4;
 
           color(getColour(color_wallcutout))
